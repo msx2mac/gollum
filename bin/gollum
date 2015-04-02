@@ -166,7 +166,6 @@ if options['irb']
   end
 
   begin
-    require 'bundler'
     require 'gollum-lib'
     wiki = Gollum::Wiki.new(gollum_path, wiki_options)
     if !wiki.exist? then
@@ -190,6 +189,7 @@ if options['irb']
     exit 0
   end
 else
+  require 'bundler'
   require 'gollum/app'
   Precious::App.set(:gollum_path, gollum_path)
   Precious::App.set(:wiki_options, wiki_options)
