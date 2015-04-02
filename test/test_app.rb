@@ -267,7 +267,7 @@ context "Frontend" do
   test "creates pages with escaped characters in title" do
     post "/create", :content => 'abc', :page => 'Title with spaces',
          :format             => 'markdown', :message => 'foo'
-    assert_equal 'http://example.org/Title-with-spaces', last_response.headers['Location']
+    assert_equal 'http://example.org/Title%20with%20spaces', last_response.headers['Location']
     get "/Title-with-spaces"
     assert_match /abc/, last_response.body
   end
@@ -677,7 +677,7 @@ context "Frontend with lotr" do
 
     post "/create", :content => 'really big smelly creatures', :page => 'Uruk Hai',
          :path               => 'Mordor', :format => 'markdown', :message => 'oooh, very scary'
-    assert_equal 'http://example.org/Mordor/Uruk-Hai', last_response.headers['Location']
+    assert_equal 'http://example.org/Mordor/Uruk%20Hai', last_response.headers['Location']
     get "/Mordor/Uruk-Hai"
     assert_match /really big smelly creatures/, last_response.body
   end
