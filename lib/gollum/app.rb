@@ -285,7 +285,7 @@ module Precious
     get '/create/*' do
       forbid unless @allow_editing
       wikip = wiki_page(params[:splat].first.gsub('+', '-'))
-      @name = wikip.name.to_url
+      @name = wikip.name
       @path = wikip.path
       @allow_uploads = wikip.wiki.allow_uploads
       @upload_dest   = find_upload_dest(@path)
@@ -309,7 +309,7 @@ module Precious
     end
 
     post '/create' do
-      name   = params[:page].to_url
+      name   = params[:page]
       path   = sanitize_empty_params(params[:path]) || ''
       format = params[:format].intern
       wiki   = wiki_new
