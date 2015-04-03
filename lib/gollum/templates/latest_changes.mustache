@@ -6,33 +6,6 @@
        class="action-view-page">Home</a></li>
   </ul>
 </div>
-<div id="wiki-history">
-
-  <fieldset>
-  <table>
-    <tbody>
-
-      {{#versions}}
-      <tr>
-        <td class="author">
-            {{>author_template}}
-        </td>
-        <td class="commit-name">
-          <span class="time-elapsed" title="{{date_full}}">{{date}}:</span>&nbsp;
-          {{message}}
-          [{{id7}}]
-          {{#files}}
-          <br>
-          <a href="{{link}}">{{file}}</a>
-          {{/files}}
-        </td>
-      </tr>
-      {{/versions}}
-
-    </tbody>
-  </table>
-  </fieldset>
-</div>
 <div id="footer">
 
 </div>
