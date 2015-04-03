@@ -1,8 +1,8 @@
 <div id="wiki-wrapper" class="history">
 <div id="head">
-  <h1><strong>{{title}}</strong></h1>
+  <h1><strong>{{title.force_encoding("utf-8")}}</strong></h1>
   <ul class="actions">
-    <li class="minibutton"><a href="{{base_url}}/{{escaped_url_path}}"
+    <li class="minibutton"><a href="{{base_url}}/{{escaped_url_path.force_encoding("utf-8")}}"
        class="action-view-page">Home</a></li>
   </ul>
 </div>
@@ -15,15 +15,15 @@
       {{#versions}}
       <tr>
         <td class="author">
-            {{>author_template}}
+            {{>author_template.force_encoding("utf-8")}}
         </td>
         <td class="commit-name">
-          <span class="time-elapsed" title="{{date_full}}">{{date}}:</span>&nbsp;
-          {{message}}
-          [{{id7}}]
-          {{#files}}
+          <span class="time-elapsed" title="{{date_full.force_encoding("utf-8")}}">{{date}}:</span>&nbsp;
+          {{message.force_encoding("utf-8")}}
+          [{{id7.force_encoding("utf-8")}}]
+          {{#files.force_encoding("utf-8")}}
           <br>
-          <a href="{{link}}">{{file}}</a>
+          <a href="{{link.force_encoding("utf-8")}}">{{file.force_encoding("utf-8")}}</a>
           {{/files}}
         </td>
       </tr>
